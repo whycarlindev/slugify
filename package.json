@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "biome lint ./src",
+    "lint:fix": "pnpm @biomejs/biome check --write .",
+    "test": "vitest",
+    "test:watch": "vitest --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.9.0",
   "dependencies": {
+    "nanoid": "^5.1.6",
+    "uuidv7": "^1.1.0"
+  },
+  "devDependencies": {
     "@biomejs/biome": "^2.3.8",
     "@types/node": "^25.0.0",
     "tsconfig-paths": "^4.2.0",
