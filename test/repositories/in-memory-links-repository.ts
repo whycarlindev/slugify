@@ -12,4 +12,15 @@ export class InMemoryLinksRepository implements LinksRepository {
   async create(link: Link) {
     this.items.push(link)
   }
+
+  async save(link: Link) {
+    const index = this.items.findIndex((item) => item.slug === link.slug)
+
+    this.items[index] = link
+  }
+
+  async findById(id: string) {
+    const link = this.items.find((item) => item.id === id)
+    return link || null
+  }
 }

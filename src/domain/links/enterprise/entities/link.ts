@@ -26,13 +26,34 @@ export class Link extends Entity<LinkProps> {
     return this.props.expirationDate
   }
 
+  get isActive() {
+    return this.props.isActive
+  }
+
+  get clickCount() {
+    return this.props.clickCount
+  }
+
   set clickCount(count: number) {
     this.props.clickCount = count
-    this.props.updatedAt = new Date()
+    this.touch()
   }
 
   set isActive(isActive: boolean) {
     this.props.isActive = isActive
+    this.touch()
+  }
+
+  set originalUrl(url: string) {
+    this.props.originalUrl = url
+    this.touch()
+  }
+
+  public addOneClick() {
+    this.props.clickCount += 1
+  }
+
+  private touch() {
     this.props.updatedAt = new Date()
   }
 
