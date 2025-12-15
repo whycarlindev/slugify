@@ -34,6 +34,14 @@ export class Link extends Entity<LinkProps> {
     return this.props.clickCount
   }
 
+  get createdAt() {
+    return this.props.createdAt
+  }
+
+  get updatedAt() {
+    return this.props.updatedAt
+  }
+
   set clickCount(count: number) {
     this.props.clickCount = count
     this.touch()
