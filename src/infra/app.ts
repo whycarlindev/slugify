@@ -1,4 +1,5 @@
 import { fastifyAwilixPlugin } from '@fastify/awilix'
+import { InjectionMode } from 'awilix'
 import fastify from 'fastify'
 import { registerDependencies } from './container'
 import { routes } from './http/routes'
@@ -24,6 +25,7 @@ export async function buildApp() {
   await app.register(fastifyAwilixPlugin, {
     disposeOnClose: true,
     disposeOnResponse: false,
+    injectionMode: InjectionMode.CLASSIC,
   })
 
   registerDependencies(app)
