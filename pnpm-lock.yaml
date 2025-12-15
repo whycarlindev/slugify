@@ -14,6 +14,9 @@ importers:
       awilix:
         specifier: ^12.0.5
         version: 12.0.5
+      dotenv:
+        specifier: ^17.2.3
+        version: 17.2.3
       fastify:
         specifier: ^5.6.2
         version: 5.6.2
@@ -600,6 +603,10 @@ packages:
   diff@4.0.2:
     resolution: {integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==}
     engines: {node: '>=0.3.1'}
+
+  dotenv@17.2.3:
+    resolution: {integrity: sha512-JVUnt+DUIzu87TABbhPmNfVdBDt18BLOWjMUFJMSi/Qqg7NTYtabbvSNJGOJ7afbRuv9D/lngizHtP7QyLQ+9w==}
+    engines: {node: '>=12'}
 
   end-of-stream@1.4.5:
     resolution: {integrity: sha512-ooEGc6HP26xXq/N+GCGOT0JKCLDGrq2bQUZrQ7gyrJiZANJ/8YDTxTpQBXGMn+WbIQXNVpyWymm7KYVICQnyOg==}
@@ -1599,6 +1606,8 @@ snapshots:
   dequal@2.0.3: {}
 
   diff@4.0.2: {}
+
+  dotenv@17.2.3: {}
 
   end-of-stream@1.4.5:
     dependencies:

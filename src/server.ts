@@ -1,10 +1,11 @@
 import { buildApp } from './infra/app'
+import { env } from './infra/env'
 
 async function start() {
   const app = await buildApp()
 
-  const port = Number(process.env.PORT) || 3000
-  const host = process.env.HOST || '0.0.0.0'
+  const port = env.PORT
+  const host = env.HOST
 
   try {
     await app.listen({ port, host })
