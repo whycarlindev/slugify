@@ -24,7 +24,7 @@ export async function linksRoutes(app: FastifyInstance) {
     return controller.handle(request, reply)
   })
 
-  app.put('/links/:id', async (request, reply) => {
+  app.patch('/links/:id', async (request, reply) => {
     const useCase = app.diContainer.resolve('editOriginalUrlUseCase')
     const controller = new EditOriginalUrlController(useCase)
     return controller.handle(request, reply)
