@@ -4,6 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc -p tsconfig.build.json",
+    "db:migrate": "knex migrate:latest --knexfile knexfile.ts",
+    "db:migrate:make": "knex migrate:make --knexfile knexfile.ts",
+    "db:migrate:rollback": "knex migrate:rollback --knexfile knexfile.ts",
     "lint": "biome lint ./src",
     "lint:fix": "pnpm @biomejs/biome check --write .",
     "test": "vitest",
@@ -14,13 +20,23 @@
   "license": "ISC",
   "packageManager": "pnpm@10.9.0",
   "dependencies": {
+    "@fastify/awilix": "^8.2.0",
+    "awilix": "^12.0.5",
+    "fastify": "^5.6.2",
+    "knex": "^3.1.0",
     "nanoid": "^5.1.6",
-    "uuidv7": "^1.1.0"
+    "pg": "^8.16.3",
+    "uuidv7": "^1.1.0",
+    "zod": "^4.2.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.8",
-    "@types/node": "^25.0.0",
+    "@biomejs/biome": "^2.3.9",
+    "@types/node": "^25.0.2",
+    "@types/pg": "^8.16.0",
+    "pino-pretty": "^13.1.3",
+    "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^4.0.15"

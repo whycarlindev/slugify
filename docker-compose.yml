@@ -1,11 +1,22 @@
-version: '3'
+version: '3.8'
 
 services:
   slugify-pg:
-    image: bitnami/postgresql
+    image: postgres:16-alpine
+    container_name: slugify-postgres
     ports:
-      - 5432:5432
+      - '5432:5432'
     environment:
-      - POSTGRESQL_USERNAME=docker
-      - POSTGRESQL_PASSWORD=docker
-      - POSTGRESQL_DATABASE=apisolid
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: slugify
+    volumes:
+      - slugify_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  slugify_postgres_data:
