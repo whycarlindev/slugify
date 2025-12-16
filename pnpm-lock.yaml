@@ -11,6 +11,9 @@ importers:
       '@fastify/awilix':
         specifier: ^8.2.0
         version: 8.2.0(awilix@12.0.5)(fastify@5.6.2)
+      '@fastify/basic-auth':
+        specifier: ^6.2.0
+        version: 6.2.0
       awilix:
         specifier: ^12.0.5
         version: 12.0.5
@@ -290,6 +293,9 @@ packages:
     peerDependencies:
       awilix: '>=9.0.0'
       fastify: ^5.0.0
+
+  '@fastify/basic-auth@6.2.0':
+    resolution: {integrity: sha512-Ao9Jf8TyW8v7p3CPy++c+E3qcCDeWfAlSIfFo0CsKrfvm81i0OCpnobIMwaSSkg/At0rzsLzbJPDWrgNru0G1w==}
 
   '@fastify/error@4.2.0':
     resolution: {integrity: sha512-RSo3sVDXfHskiBZKBPRgnQTtIqpi/7zhJOEmAxCiBcM7d0uwdGdxLlsCaLzGs8v8NnxIRlfG0N51p5yFaOentQ==}
@@ -1357,6 +1363,11 @@ snapshots:
       awilix: 12.0.5
       awilix-manager: 6.2.1(awilix@12.0.5)
       fastify: 5.6.2
+      fastify-plugin: 5.1.0
+
+  '@fastify/basic-auth@6.2.0':
+    dependencies:
+      '@fastify/error': 4.2.0
       fastify-plugin: 5.1.0
 
   '@fastify/error@4.2.0': {}

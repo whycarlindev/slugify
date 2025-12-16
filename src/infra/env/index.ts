@@ -11,6 +11,9 @@ const envSchema = z.object({
   DB_NAME: z.string(),
   DB_USER: z.string(),
   DB_PASSWORD: z.string(),
+
+  BASIC_AUTH_USER: z.string(),
+  BASIC_AUTH_PASS: z.string(),
 })
 
 const _env = envSchema.safeParse(process.env)

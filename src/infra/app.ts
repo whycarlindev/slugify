@@ -1,6 +1,8 @@
 import { fastifyAwilixPlugin } from '@fastify/awilix'
+import basicAuth from '@fastify/basic-auth'
 import { InjectionMode } from 'awilix'
 import fastify from 'fastify'
+import { validateBasicAuth } from './auth/validate-basic-auth'
 import { registerDependencies } from './container'
 import { routes } from './http/routes'
 
@@ -26,6 +28,11 @@ export async function buildApp() {
     disposeOnClose: true,
     disposeOnResponse: false,
     injectionMode: InjectionMode.CLASSIC,
+  })
+
+  await app.register(basicAuth, {
+    validate: validateBasicAuth,
+    authenticate: { realm: 'Admin Area' },
   })
 
   registerDependencies(app)
